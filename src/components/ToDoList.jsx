@@ -10,8 +10,12 @@ function ToDoList({
   setEditText,
   onSave
 }) {
+  if (todos.length === 0) {
+    return <p className="empty-text">No todos yet</p>;
+  }
+
   return (
-    <div>
+    <div className="todo-list">
       {todos.map((todo) => (
         <ToDoItem
           key={todo.id}
@@ -30,3 +34,4 @@ function ToDoList({
 }
 
 export default ToDoList;
+

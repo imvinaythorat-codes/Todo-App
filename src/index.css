@@ -6,23 +6,220 @@
 
 body {
   min-height: 100vh;
-  background-color: #01161e;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: #eff6e0;
+  background: linear-gradient(180deg, #01161e, #02232f);
+  font-family: system-ui, -apple-system, sans-serif;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
   padding: 40px 16px;
+  color: #eff6e0;
 }
 
+/* App container */
 .app {
   width: 100%;
-  max-width: 520px;
+  max-width: 480px;
   background-color: #124559;
-  padding: 24px;
-  border-radius: 12px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  border-radius: 10px;
+  animation: fadeIn 0.4s ease;
 }
 
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
 
+.header h1 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* ===== APP CARD ===== */
+.app {
+  width: 100%;
+  max-width: 480px;
+  background-color: #124559;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+/* ===== HEADER ===== */
+.header {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.header h1 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* ===== ADD TODO ===== */
+.add-todo {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.add-todo input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 14px;
+}
+
+.add-todo input:focus {
+  outline: 2px solid #aec3b0;
+}
+
+.add-todo button {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  background-color: #aec3b0;
+  color: #01161e;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.add-todo button:hover {
+  background-color: #eff6e0;
+  transform: scale(1.05);
+}
+
+/* ===== TODO LIST ===== */
+.todo-list {
+  margin-top: 10px;
+}
+
+/* ===== TODO ITEM ===== */
+.todo-item {
+  background: #ffffff;
+  color: #01161e;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LEFT SIDE */
+.todo-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+
+.todo-left input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.todo-left span {
+  font-size: 14px;
+}
+
+/* COMPLETED */
+.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+/* EDIT INPUT */
+.edit-input {
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid #aec3b0;
+  font-size: 14px;
+}
+
+/* RIGHT SIDE */
+.todo-actions {
+  display: flex;
+  gap: 6px;
+}
+
+/* BUTTONS */
+.todo-actions button {
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+/* EDIT / SAVE */
+.todo-actions button:first-child {
+  background-color: #aec3b0;
+  color: #01161e;
+}
+
+.todo-actions button:first-child:hover {
+  transform: scale(1.05);
+}
+
+/* DELETE */
+.todo-actions button:last-child {
+  background-color: #e63946;
+  color: white;
+}
+
+.todo-actions button:last-child:hover {
+  transform: scale(1.05);
+}
+
+/* EMPTY STATE */
+.empty-text {
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* ===== RESPONSIVE FIXES ===== */
+
+/* make app breathe on small screens */
+@media (max-width: 480px) {
+  .app {
+    padding: 16px;
+  }
+
+  .header h1 {
+    font-size: 20px;
+  }
+}
+
+/* stack input & button on very small screens */
+@media (max-width: 400px) {
+  .add-todo {
+    flex-direction: column;
+  }
+
+  .add-todo button {
+    width: 100%;
+  }
+}
+
+/* prevent text from pushing buttons */
+.todo-left span {
+  word-break: break-word;
+}
 
