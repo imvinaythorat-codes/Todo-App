@@ -1,3 +1,6 @@
+// Handles individual todo item rendering
+
+
 function ToDoItem({
   todo,
   onToggle,
