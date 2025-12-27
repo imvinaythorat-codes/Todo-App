@@ -21,5 +21,5 @@ This is a simple Todo List application built as part of a React assignment using
 git clone <https://github.com/imvinaythorat-codes/Todo-App.git>
 
 2. Deployed on netlify:
-netlify : https://todo-application-vt.netlify.app/
+ https://todo-application-vt.netlify.app/
 
