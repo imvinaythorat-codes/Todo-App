@@ -18,5 +18,5 @@ This is a simple Todo List application built as part of a React assignment using
 ## Project Setup and Run Instructions
 
 1. Clone the repository
-git clone <repository-url>
+git clone <https://github.com/imvinaythorat-codes/Todo-App.git>
 
